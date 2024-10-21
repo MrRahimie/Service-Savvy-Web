@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <link rel="icon" href="images/fevicon.png" type="image/gif" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>ServiceSavvy - Projects Listing</title>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">-->
+  <script>
+    $(document).ready(function () {
+      // Fetch project data from the server
+      $.getJSON('/projects', function (data) {
+        if (data.length > 0) {
+          let projectList = '<ul>';
+          data.forEach(project => {
+            projectList += `<li>
+                            <h3>${project.name}</h3>
+                            <p><strong>Overview:</strong> ${project.overview}</p>
+                            <p><strong>Requirements:</strong> ${project.requirements}</p>
+                            <p><strong>Budget:</strong> RM${project.budget}</p>
+                            <p><strong>Email:</strong> ${project.email}</p>
+                            <p><strong>Phone:</strong> ${project.phone}</p>
+                            <p><strong>Completion Date:</strong> ${new Date(project.completionDate).toLocaleDateString()}</p>
+                        </li>
+                        <hr>`;
+          });
+          projectList += '</ul>';
+          $('#project-list').html(projectList);
+        } else {
+          $('#project-list').html('<p>No projects found.</p>');
+        }
+      }).fail(function () {
+        $('#project-list').html('<p>Error fetching projects.</p>');
+      });
+    });
+
+    $(document).ready(function () {
+      // Fetch project data from the server
+      $.getJSON('/projects', function (data) {
+        console.log("Fetched data:", data); // For debug purpose
+        if (data.length > 0) {
+          let projectCards = '';
+          data.forEach(project => {
+            // Check if the fields are defined before displaying them
+            const name = project.name || 'No name provided';
+            const overview = project.overview || 'No overview provided';
+            const completionDate = project.completionDate ? new Date(project.completionDate).toLocaleDateString() : 'No completion date provided';
+            const projectId = project._id; // Assume MongoDB's default ID field
+
+            projectCards += `<div class="card mb-3" onclick="viewProjectDetails('${projectId}')">
+              <div class="row no-gutters">
+                <div class="col-md-4">
+                  <img src="/public/images/SS_Logo.png" alt="Project Image" height="150px">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">${name}</h5>
+                    <p class="card-text">${overview}</p>
+                    <p class="card-text"><small class="text-muted">Expected Completion Date: ${completionDate}</small></p>
+                  </div>
+                </div>
+              </div>
+            </div>`;
+          });
+          $('#project-list').html(projectCards);
+        } else {
+          $('#project-list').html('<p>No projects found.</p>');
+        }
+      }).fail(function () {
+        $('#project-list').html('<p>Error fetching projects.</p>');
+      });
+    });
+
+    function viewProjectDetails(projectId) {
+      // Redirect to the detailed view page by passing the project ID as a query parameter
+      window.location.href = `/project-listing-detailed-view?id=${projectId}`;
+    }
+  </script>
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+  <!-- range slider -->
+
+  <!-- font awesome style -->
+  <link href="css/font-awesome.min.css" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet" />
+
+</head>
+
+<body>
+
+  <div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="header_top">
+        <div class="container-fluid">
+          <div class="top_nav_container">
+            <div class="contact_nav">
+              <a href="">
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                <span>
+                  Call : +01 123455678990
+                </span>
+              </a>
+              <a href="">
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+                <span>
+                  Email : serviceSavvy@gmail.com
+                </span>
+              </a>
+            </div>
+            <div class="user_option_box">
+              <a href="/">LOGOUT</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="header_bottom">
+        <div class="container-fluid">
+          <nav class="navbar navbar-expand-lg custom_nav-container ">
+            <a class="navbar-brand" href="/home">
+              <span>
+                ServiceSavvy
+              </span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class=""> </span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ">
+                <li class="nav-item ">
+                  <a class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/service">Services</a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="/project-listing">Projects</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/forum">Forum</a> <!-- Changed from 'Community' -->
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/FAQ">FAQ</a>
+                </li>
+                <li class="nav-item ">
+                  <a class="nav-link" href="/profile_with_data_and_skills">Manage Account</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <!-- end header section -->
+
+    <div class="container layout_padding">
+      <a href="/my-projects" target="_parent">
+        <button type="button" id="my-projects" class="btn btn-outline-primary"
+          style="margin-bottom: 10px; margin-top: 10px; display: block; margin-left: auto;"
+          onclick="window.location.href='/my-projects'">My Projects</button>
+      </a>
+      <h1>Projects Listing</h1>
+      <br>
+      <div class="container">
+        <div id="project-list">
+          <!-- Project data will be injected here by JavaScript -->
+        </div>
+      </div>
+    </div>
+
+      <!-- info section -->
+  <section class="info_section ">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="info_contact">
+            <h5>
+              <a href="" class="navbar-brand">
+                <span>
+                  ServiceSavvy
+                </span>
+              </a>
+            </h5>
+            <p>
+              <i class="fa fa-map-marker" aria-hidden="true"></i>
+              Address
+            </p>
+            <p>
+              <i class="fa fa-phone" aria-hidden="true"></i>
+              +01 1234567890
+            </p>
+            <p>
+              <i class="fa fa-envelope" aria-hidden="true"></i>
+              serviceSavvy@gmail.com
+            </p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="info_info">
+            <h5>
+              Information
+            </h5>
+            <p>
+              ServiceSavvy is an intuitive online marketplace designed to connect freelancers with clients looking for their expertise. Whether you’re a freelancer seeking new opportunities or a client in need of talent
+            </p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="info_links">
+            <h5>
+              Useful Link
+            </h5>
+            <ul>
+              <li>
+                <a href="home">
+                  Home
+                </a>
+              </li>
+              <li>
+                <a href="service">
+                  Services
+                </a>
+              </li>
+              <li>
+                <a href="project-listing">
+                  Projects
+                </a>
+              </li>
+            </li>
+            <li>
+              <a href="forum">
+                Forum
+              </a>
+            </li>
+              <li>
+                <a href="FAQ">
+                  FAQ
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="info_form ">
+            <h5>
+              Newsletter
+            </h5>
+            <form action="">
+              <input type="email" placeholder="Enter your email">
+              <button>
+                Subscribe
+              </button>
+            </form>
+            <div class="social_box">
+              <a href="">
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-youtube" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end info_section -->
+
+
+    <!-- footer section -->
+    <footer class="footer_section">
+      <div class="container">
+        <p>
+          &copy; <span id="displayYear"></span> All Rights Reserved By
+          <a href="https://html.design/">ServiceSavvy</a>
+        </p>
+      </div>
+    </footer>
+    <!-- footer section -->
+
+    <!-- jQery -->
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <!-- bootstrap js -->
+    <script src="js/bootstrap.js"></script>
+    <!-- custom js -->
+    <script src="js/custom.js"></script>
+
+
+</body>
+
+</html>

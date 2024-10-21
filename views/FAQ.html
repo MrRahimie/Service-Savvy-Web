@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <link rel="icon" href="images/fevicon.png" type="image/gif" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>ServiceSavvy</title>
+
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet"> <!-- range slider -->
+
+  <!-- font awesome style -->
+  <link href="css/font-awesome.min.css" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet" />
+
+  <style>
+    body {
+            font-family: Arial, sans-serif;
+            font-size: 15px; /* Smaller font size */
+        }
+        .faq-header {
+            text-align: center;
+            margin: 2px;
+        }
+        .faq-container {
+            width: 90%; /* Even narrower container */
+            margin: auto;
+        }
+        .faq-item {
+            background: #f9f9f9;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+        .faq-question {
+            margin: 0;
+            padding: 10px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 15px;
+            font-weight: bold;
+        }
+        .faq-question::after {
+            content: '+'; /* Plus sign */
+            font-size: 24px; /* Larger plus sign */
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            padding: 0 10px;
+        }
+        .faq-answer.expanded {
+            max-height: 300px; /* Adjust as needed */
+        }
+    /* This will center your image button */
+.live-chat-button-container {
+  text-align: center; /* Centers inline elements */
+  margin-top: 20px; /* Adjust the top margin as needed */
+}
+
+/* Container styling */
+.button-container {
+  display: flex; /* Use Flexbox to align items */
+  justify-content: center; /* Center items horizontally */
+  align-items: center; /* Center items vertically */
+  gap: 60px; /* Space between the buttons */
+}
+
+.image-button img {
+  width: 100px; /* Adjust the width as needed */
+  height: auto;
+  cursor: pointer;
+}
+/* This will center the text inside the paragraph */
+.centered-text {
+  text-align: center; /* Centers the text horizontally */
+  margin-top: 20px; /* Adjust the top margin as needed */
+  font-style: italic; /* Keeps the italic style from the <i> tag */
+}
+
+  </style>
+</head>
+<body class="sub_page">
+
+    <div class="hero_area">
+      <!-- header section strats -->
+      <header class="header_section">
+        <div class="header_top">
+          <div class="container-fluid">
+            <div class="top_nav_container">
+              <div class="contact_nav">
+                <a href="">
+                  <i class="fa fa-phone" aria-hidden="true"></i>
+                  <span>
+                    Call : +01 123455678990
+                  </span>
+                </a>
+                <a href="">
+                  <i class="fa fa-envelope" aria-hidden="true"></i>
+                  <span>
+                    Email : serviceSavvy@gmail.com
+                  </span>
+                </a>
+              </div>
+              <div class="user_option_box">
+                <a href="/">LOGOUT</a>
+              </div>
+            </div>
+  
+          </div>
+        </div>
+        <div class="header_bottom">
+          <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg custom_nav-container ">
+              <a class="navbar-brand" href="/home">
+                <span>
+                  ServiceSavvy
+                </span>
+              </a>
+  
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class=""> </span>
+              </button>
+  
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ">
+                  <li class="nav-item">
+                    <a class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/service">Services</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/project-listing">Projects</a>
+                  <li class ="nav-item">
+                  <li class="nav-item">
+                    <a class="nav-link" href="/forum">Forum</a> <!-- Changed from 'Community' -->
+                  </li>                
+                  <li class="nav-item active">
+                      <a class = "nav-link" href="/FAQ">FAQ</a>
+                  </li>
+                  <li class ="nav-item">
+                    <a class = "nav-link" href="/profile_with_data_and_skills">Manage Account</a>
+                </li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </header>
+      <!-- end header section -->
+       <div class="container layout_padding">
+      <h1 class="faq-header ">Frequently Asked Questions</h1>
+
+      <div class="faq-container">
+        <!-- FAQ Item 1 -->
+        <div class="faq-item">
+          <h2 class="faq-question">What is freelancing?</h2>
+          <div class="faq-answer">
+            <p>Freelancing means working as an independent business rather than as an employee of a company. Freelancers are self-employed and often hired for short-term work, managing their own taxes, insurances, and retirement plans.</p>
+          </div>
+        </div>
+        <!-- FAQ Item 2 -->
+        <div class="faq-item">
+          <h2 class="faq-question">Do freelancers need to register a company?</h2>
+          <div class="faq-answer">
+            <p>It depends on the local laws and the scale of your freelancing business. In some cases, registering a company can provide legal benefits and tax advantages.</p>
+          </div>
+        </div>
+        <!-- FAQ Item 3 -->
+        <div class="faq-item">
+          <h2 class="faq-question">How do freelancers get paid?</h2>
+          <div class="faq-answer">
+            <p>Freelancers typically get paid project by project, either through direct payments like bank transfers or online platforms like PayPal. They may also use invoicing systems to bill their clients.</p>
+          </div>
+        </div>
+        <!-- FAQ Item 4 -->
+        <div class="faq-item">
+          <h2 class="faq-question">What is the biggest challenge faced by freelancers?</h2>
+          <div class="faq-answer">
+            <p>One of the biggest challenges is finding consistent work and managing cash flow. Freelancers must also handle all aspects of their business, including marketing, client relations, and finances.</p>
+          </div>
+        </div>
+        <!-- Add more FAQ items as needed -->
+      </div>
+
+<script>
+  document.querySelectorAll('.faq-question').forEach(item => {
+    item.addEventListener('click', event => {
+      const answer = item.nextElementSibling;
+      answer.classList.toggle('expanded');
+    });
+  });
+</script>
+<p class="centered-text">
+    <i>
+        If you have a problem, you can just contact us through our Live Chat. Or You can submit through Our Helpdesk Ticket
+    </i>
+</p>
+<!-- Container for both image buttons -->
+<div class="button-container">
+    <!-- Live Chat button -->
+    <a href="/live_chat.html" class="image-button">
+      <img src="images/liveChat.png" alt="Live Chat" />
+    </a>
+    <!-- Helpdesk button -->
+    <a href="/helpdesk.html" class="image-button">
+      <img src="images/helpDesk.png" alt="Help Desk" />
+    </a>
+  </div><br>
+</div>
+   <!-- info section -->
+   <section class="info_section ">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="info_contact">
+            <h5>
+              <a href="" class="navbar-brand">
+                <span>
+                  ServiceSavvy
+                </span>
+              </a>
+            </h5>
+            <p>
+              <i class="fa fa-map-marker" aria-hidden="true"></i>
+              Address
+            </p>
+            <p>
+              <i class="fa fa-phone" aria-hidden="true"></i>
+              +01 1234567890
+            </p>
+            <p>
+              <i class="fa fa-envelope" aria-hidden="true"></i>
+              serviceSavvy@gmail.com
+            </p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="info_info">
+            <h5>
+              Information
+            </h5>
+            <p>
+              ServiceSavvy is an intuitive online marketplace designed to connect freelancers with clients looking for their expertise. Whether you’re a freelancer seeking new opportunities or a client in need of talent
+            </p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="info_links">
+            <h5>
+              Useful Link
+            </h5>
+            <ul>
+              <li>
+                <a href="home">
+                  Home
+                </a>
+              </li>
+              <li>
+                <a href="service">
+                  Services
+                </a>
+              </li>
+              <li>
+                <a href="project-listing">
+                  Projects
+                </a>
+              </li>
+            </li>
+            <li>
+              <a href="forum">
+                Forum
+              </a>
+            </li>
+              <li>
+                <a href="FAQ">
+                  FAQ
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="info_form ">
+            <h5>
+              Newsletter
+            </h5>
+            <form action="">
+              <input type="email" placeholder="Enter your email">
+              <button>
+                Subscribe
+              </button>
+            </form>
+            <div class="social_box">
+              <a href="">
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-youtube" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end info_section -->
+      <!-- footer section -->
+  <footer class="footer_section">
+    <div class="container">
+          </div>
+           <p>
+        &copy; <span id="displayYear"></span> All Rights Reserved By
+        <a href="https://html.design/">ServiceSavvy</a>
+      </p>
+    </div>
+  </footer>
+  <!-- footer section -->
+
+  <!-- jQery -->
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <!-- bootstrap js -->
+  <script src="js/bootstrap.js"></script>
+  <!-- custom js -->
+  <script src="js/custom.js"></script>
+</body>
+</html>

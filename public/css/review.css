@@ -1,0 +1,139 @@
+p {
+  text-align: center;
+  font-style: italic;
+  font-size: 18px;
+}
+
+.review-txt{
+  font-size: 50px;
+  color: rgb(0, 0, 0);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+.rate{
+  -webkit-text-stroke: 0.5px rgb(77, 77, 77);
+  color: rgb(255, 255, 255);
+  
+}
+
+.lead {
+  font-size: 24px;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+}
+
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.overall-rating {
+  display: inline-block;
+  margin-right: 11px;
+  font-weight: bold;
+  color: #ffd000;
+  font-size: 18px;
+}
+
+.stars {
+  display: inline-block;
+}
+
+.star-rating {
+  display: flex;
+  margin-top: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.star-rating input {
+  display: none;
+}
+
+.star-rating label {
+  float: right;
+  cursor: pointer;
+  color: #ccc;
+  transition: color 0.3s;
+}
+
+.star-rating label:before {
+  content: '\2605';
+  font-size: 35px;
+}
+
+.star-rating input:checked ~ label,
+.star-rating label:hover,
+.star-rating label:hover ~ label {
+  color: #ffd000;
+  transition: color 0.3s;
+}
+
+.feedback-container {
+  width: 600px;
+  height: auto;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 15px;
+  background: #ffffff;
+  box-shadow: 5px 5px 10px #8d8d8d, -3px -3px 15px #ffffff;
+}
+
+.feedback-input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 18px;
+}
+
+.buttons {
+  margin: 0 50px;
+  width: 120px;
+  font-size: 18px;
+  font-weight: bold;
+  height: fit-content;
+  display: inline-block;
+  padding: 10px;
+  margin-top: 20px;
+  background-color: #14c8aa;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.buttons span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.buttons span:after {
+  content: '»';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -15px;
+  transition: 0.5s;
+}
+
+.buttons:hover span {
+  padding-right: 15px;
+}
+
+.buttons:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+

@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <link rel="icon" href="images/fevicon.png" type="image/gif" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>ServiceSavvy</title>
+
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet"> <!-- range slider -->
+
+  <!-- font awesome style -->
+  <link href="css/font-awesome.min.css" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet" />
+
+</head>
+
+<body class="sub_page">
+
+  <div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="header_top">
+        <div class="container-fluid">
+          <div class="top_nav_container">
+            <div class="contact_nav">
+              <a href="">
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                <span>
+                  Call : +01 123455678990
+                </span>
+              </a>
+              <a href="">
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+                <span>
+                  Email : serviceSavvy@gmail.com
+                </span>
+              </a>
+            </div>
+
+            <div class="user_option_box">
+              <a href="/">LOGOUT</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="header_bottom">
+        <div class="container-fluid">
+          <nav class="navbar navbar-expand-lg custom_nav-container ">
+            <a class="navbar-brand" href="/home">
+              <span>
+                ServiceSavvy
+              </span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class=""> </span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ">
+                <li class="nav-item ">
+                  <a class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="/service">Services</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/project-listing">Projects</a>
+                <li class ="nav-item">
+                <li class="nav-item">
+                  <a class="nav-link" href="/forum">Forum</a> <!-- Changed from 'Community' -->
+                </li>                
+                <li class="nav-item">
+                    <a class = "nav-link" href="/FAQ">FAQ</a>
+                </li>
+                <li class ="nav-item">
+                  <a class = "nav-link" href="/profile_with_data_and_skills">Manage Account</a>
+              </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <!-- end header section -->
+  </div>
+
+  
+  <style>
+    .manage-button{
+      background-color: teal;
+      color: white;
+      padding: 8px;
+      
+    }
+    .product_section {
+      padding: 50px 0;
+      background-color: #f8f9fa;
+    }
+    .heading_container {
+      margin-bottom: 30px;
+    }
+    .box {
+      background-color: #ffffff;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 30px;
+      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    }
+    .img-box img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+    .product_info {
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .star_container {
+      color: #f2b01e;
+    }
+    .more_info_btn {
+      display: block;
+      text-align: center;
+      margin-top: 20px;
+    }
+    .manage_btn_container {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000; 
+    }
+  </style>
+  
+</head>
+<body>
+  <!-- Product section -->
+
+  <section class="product_section layout_padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <div class="input-group">
+            <input type="text" class="form-control" id="searchInput" placeholder="Search services...">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary" type="button" id="searchButton">Search</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="filterDesign" value="design">
+            <label class="form-check-label" for="filterDesign">Design</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="filterVideo" value="video">
+            <label class="form-check-label" for="filterVideo">Video</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="filterMobileApp" value="mobile app">
+            <label class="form-check-label" for="filterMobileApp">Mobile Application</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="filterProgramming" value="programming">
+            <label class="form-check-label" for="filterProgramming">Programming</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="filterPhotography" value="photography">
+            <label class="form-check-label" for="filterPhotography">Photography</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="filterBusiness" value="business">
+            <label class="form-check-label" for="filterBusiness">Business</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="filterLanguage" value="language">
+            <label class="form-check-label" for="filterLanguage">Language</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="filterPodcast" value="podcast">
+            <label class="form-check-label" for="filterPodcast">Podcast</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="filterWebApp" value="web application">
+            <label class="form-check-label" for="filterWebApp">Web Application</label>
+          </div>
+        </div>
+      </div>
+  </section>
+
+  <section class="product_section layout_padding">
+    <div class="container">
+      <div class="heading_container heading_center">
+        <h2>Our Services</h2>
+      </div>
+      <div class="row" id="servicesContainer">
+        <!-- Services will be dynamically loaded here -->
+      </div>
+      <div class="pagination">
+        <button id="prevPageBtn" >Previous</button>
+        <span id="pageInfo"></span>
+        <button id="nextPageBtn" >Next</button>
+       
+      </div>
+      </div>
+    </div>
+  </section>
+  <!-- End product section -->
+  
+
+ <!-- Add Services button -->
+<div class="container mt-5">
+  <div class="row justify-content-end">
+    <div class="col-md-6 col-lg-4 text-right mb-4">
+      <a href="manageservice.html" class="manage-button mb-5">Add Services</a>
+    </div>
+  </div>
+</div>
+
+
+  <!-- info section -->
+  <section class="info_section ">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="info_contact">
+            <h5>
+              <a href="" class="navbar-brand">
+                <span>
+                  ServiceSavvy
+                </span>
+              </a>
+            </h5>
+            <p>
+              <i class="fa fa-map-marker" aria-hidden="true"></i>
+              Address
+            </p>
+            <p>
+              <i class="fa fa-phone" aria-hidden="true"></i>
+              +01 1234567890
+            </p>
+            <p>
+              <i class="fa fa-envelope" aria-hidden="true"></i>
+              serviceSavvy@gmail.com
+            </p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="info_info">
+            <h5>
+              Information
+            </h5>
+            <p>
+              ServiceSavvy is an intuitive online marketplace designed to connect freelancers with clients looking for their expertise. Whether you’re a freelancer seeking new opportunities or a client in need of talent
+            </p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="info_links">
+            <h5>
+              Useful Link
+            </h5>
+            <ul>
+              <li>
+                <a href="home">
+                  Home
+                </a>
+              </li>
+              <li>
+                <a href="service">
+                  Services
+                </a>
+              </li>
+              <li>
+                <a href="project-listing">
+                  Projects
+                </a>
+              </li>
+            </li>
+            <li>
+              <a href="forum">
+                Forum
+              </a>
+            </li>
+              <li>
+                <a href="FAQ">
+                  FAQ
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="info_form ">
+            <h5>
+              Newsletter
+            </h5>
+            <form action="">
+              <input type="email" placeholder="Enter your email">
+              <button>
+                Subscribe
+              </button>
+            </form>
+            <div class="social_box">
+              <a href="">
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-youtube" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end info_section -->
+
+
+  <!-- footer section -->
+  <footer class="footer_section">
+    <div class="container">
+      <p>
+        &copy; <span id="displayYear"></span> All Rights Reserved By
+        <a href="https://html.design/">ServiceSavvy</a>
+      </p>
+    </div>
+  </footer>
+  <!-- footer section -->
+
+  <!-- jQery -->
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <!-- bootstrap js -->
+  <script src="js/bootstrap.js"></script>
+  <!-- custom js -->
+  <script src="js/custom.js"></script>
+  <script src="/js/services.js"></script>
+  <script src="/js/servicedesc.js"></script>
+
+ 
+
+</body>
+
+</html>

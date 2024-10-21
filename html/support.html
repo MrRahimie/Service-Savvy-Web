@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicesavvy</title>
+    <link rel="stylesheet" href="/css/login.css">
+</head>
+<body>
+    <header>
+        <div class="logo-title-container">
+            <img class="logo" src="images/SS logo.png" width="80" alt="Logo">
+            <p class="title">ServiceSavvy</p>
+        </div>
+        <nav class="navigation">
+            <a href="/index.html">Home</a>
+            <a href="/aboutIndex.html">About</a>
+            <a href="/support.html">Support and Help</a>
+            <button class="btnLogin-popup">Login</button>
+        </nav>
+    </header>
+    <div class="wrapper">
+        <div class="form-box login"></div>
+        <div class="container" id="container">
+            <div class="form-container sign-up-container">
+                <form action="/index" method="post">
+                    <h1>Create Account</h1>
+                    <div class="social-container">
+                        <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                        <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <span>or use your email for registration</span>
+                    <input type="text" placeholder="Name" />
+                    <input type="email" placeholder="Email" />
+                    <input type="password" placeholder="Password" />
+                    <!-- <button onclick="window.location.href='/home.html'">Sign In</button> -->
+                    <a href="/home.html">Sign Up</a>
+
+                </form>
+            </div>
+            <div class="form-container sign-in-container">
+                <form action="/index" method="post">
+                    <h1>Sign in</h1>
+                    <div class="social-container">
+                        <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                        <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <span>or use your account</span>
+                    <input type="email" placeholder="Email" />
+                    <input type="password" placeholder="Password" />
+                    <a href="#">Forgot your password?</a>
+                    <a href="/home.html">Sign In</a>
+                </form>
+            </div>
+            <div class="overlay-container">
+                <div class="overlay">
+                    <div class="overlay-panel overlay-left">
+                        <h1>Welcome Back!</h1>
+                        <p>To keep connected with us please login with your personal info</p>
+                        <button class="ghost" id="signIn">Sign In</button>
+                    </div>
+                    <div class="overlay-panel overlay-right">
+                        <h1>Hello, Friend!</h1>
+                        <p>Enter your personal details and start journey with us</p>
+                        <button class="ghost" id="signUp">Sign Up</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="span-wrapper">
+        <div>
+            <p class="line1">
+                YOU NEED HELP ?
+            </p>
+            <div class="service-info2">
+                <p class="lineBold">Contact us now if you have any queries !</p>
+                <p class="line2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, laborum. Pariatur distinctio magnam delectus molestias. Ducimus, dolor mollitia cum, ab placeat delectus quo voluptatem voluptatum eius porro enim tempore et.</p>
+                <button class="btnLogin-popup2">CONTACT</button>
+            </div>
+
+        </div>
+    <script src="js/script.js"></script>
+</body>
+</html>

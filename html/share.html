@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Basic Meta Information -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit-no" />
+  
+  <!-- Title and Stylesheets -->
+  <title>ServiceSavvy - Forum</title>
+  <link rel="icon" href="images/fevicon.png" type="image/gif" />
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <link href="css/style.css" rel="stylesheet" />
+  <link href="css/responsive.css" rel="stylesheet" />
+
+  <style>
+    .forum_box {
+      background-color: #ffffff; /* White background */
+      border: 1px solid #dddddd; /* Light gray border */
+      border-radius: 10px; /* Rounded corners */
+      padding: 15px; /* Padding inside the box */
+      margin-bottom: 15px; /* Spacing between boxes */
+      box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1); /* Light shadow */
+      transition: all 0.3s ease; /* Transition for hover effect */
+    }
+    
+    .forum_box:hover {
+      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2); /* Hover effect for shadow */
+    }
+
+    .forum_title {
+      font-size: 1.5em; /* Larger font size */
+      font-weight: bold; /* Bold text */
+    }
+
+    .forum_content {
+      font-size: 1em; /* Normal font size */
+      color: #666666; /* Gray text */
+    }
+
+    .forum_post_count {
+      font-size: 0.8em; /* Smaller font size */
+      color: #999999; /* Lighter gray text */
+    }
+
+    .add_forum_button {
+      background-color: #28a745; /* Green background */
+      color: #ffffff; /* White text */
+      padding: 10px 20px; /* Padding for button */
+      border-radius: 10px; /* Rounded corners */
+      border: none; /* No border */
+      font-size: 1em; /* Font size */
+      cursor: pointer; /* Pointer cursor */
+      text-align: center; /* Centered text */
+      display: inline-block; /* Inline-block for horizontal alignment */
+      transition: background-color 0.3s ease; /* Transition for hover */
+    }
+    
+    .add_forum_button:hover {
+      background-color: #218838; /* Darker green on hover */
+    }
+
+    .center {
+      text-align: center; /* Centers elements horizontally */
+    }
+  </style>
+</head>
+<body>
+  <!-- Header Section with 'Community' Highlighted -->
+  <header class="header_section">
+    <div class="header_top">
+      <div class="container-fluid">
+        <div class="top_nav_container">
+          <div class="contact_nav">
+            <a href="">
+              <i class="fa fa-phone" aria-hidden="true"></i>
+              <span>Call: +01 123455678990</span>
+            </a>
+            <a href="">
+              <i class="fa fa-envelope" aria-hidden="true"></i>
+              <span>Email: demo@gmail.com</span>
+            </a>
+          </div>
+          <form class="search_form">
+            <input type="text" class="form-control" placeholder="Search here...">
+            <button type="submit">
+              <i class="fa fa-search" aria-hidden="true"></i>
+            </button>
+          </form>
+          <div class="user_option_box">
+            <a href="" class="account-link">
+              <i class="fa fa-user" aria-hidden="true"></i>
+              <span>My Account</span>
+            </a>
+            <a href="" class="cart-link">
+              <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+              <span>Cart</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="header_bottom">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container">
+          <a class="navbar-brand" href="index.html">
+            <span>ServiceSavvy</span>
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+            <span></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+              <!-- No 'active' class for 'Home' -->
+              <li class="nav-item">
+                <a class="nav-link" href="home.html">Home</a>
+              </li>
+              <!-- 'Community' is highlighted -->
+              <li class="nav-item dropdown active">
+                <a class="nav-link dropdown-toggle" href="#" id="communityDropdown" aria-haspopup="true" aria-expanded="false">
+                  Community
+                </a>
+                <div class="dropdown-menu" aria-labelledby="communityDropdown">
+                  <a class="dropdown-item" href="forum.html">Forum</a>
+                  <a class="dropdown-item" href="share.html">Share</a>
+                </div>
+              </li>
+              <!-- Other Navigation Items -->
+              <li class="nav-item">
+                <a class="nav-link" href="service.html">Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="project-listing.html">Projects</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="FAQ.html">Help and Support</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Body Content for the 'Forum' Page -->
+ <!-- Forum Section -->
+ <section class="forum_section layout_padding">
+    <div class="container">
+      <div class="row">
+        <!-- Forum Post 1 -->
+        <div class="col-sm-6 col-lg-4">
+          <div class="forum_box">
+            <h4 class="forum_title">Niko Omilana</h4>
+            <p class="forum_content">Man, this website is boring.</p>
+            
+          </div>
+        </div>
+        
+        <!-- Forum Post 2 -->
+        <div class="col-sm-6 col-lg-4">
+          <div class="forum_box">
+            <h4 class="forum_title">Filly</h4>
+            <p class="forum_content">Mandem, this is a nice website, sheesh.</p>
+           
+          </div>
+        </div>
+        
+        <!-- Forum Post 3 -->
+        <div class="col-sm-6 col-lg-4">
+          <div class="forum_box">
+            <h4 class="forum_title">Chunkz</h4>
+            <p class="forum_content">Try not to laugh ehhe.</p>
+            
+          </div>
+        </div>
+        
+        <!-- Forum Post 4 -->
+        <div class="col-sm-6 col-lg-4">
+          <div class="forum_box">
+            <h4 class="forum_title">Kenny</h4>
+            <p class="forum_content">Join me on a boxing night service.</p>
+            
+          </div>
+        </div>
+      </div>
+
+      <!-- "+ Add Forum" Button centered at the bottom -->
+      <div class="row">
+        <div class="col center"> <!-- Centers the content horizontally -->
+          <button class="add_forum_button">+ Add Forum</button>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+  
+  
+
+   <!-- info section -->
+   <section class="info_section ">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="info_contact">
+            <h5>
+              <a href="" class="navbar-brand">
+                <span>
+                  ServiceSavvy
+                </span>
+              </a>
+            </h5>
+            <p>
+              <i class="fa fa-map-marker" aria-hidden="true"></i>
+              Address
+            </p>
+            <p>
+              <i class="fa fa-phone" aria-hidden="true"></i>
+              +01 1234567890
+            </p>
+            <p>
+              <i class="fa fa-envelope" aria-hidden="true"></i>
+              demo@gmail.com
+            </p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="info_info">
+            <h5>
+              Information
+            </h5>
+            <p>
+              Eligendi sunt, provident, debitis nemo, facilis cupiditate velit libero dolorum aperiam enim nulla iste maxime corrupti ad illo libero minus.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="info_links">
+            <h5>
+              Useful Link
+            </h5>
+            <ul>
+              <li>
+                <a href="home.html">
+                  Home
+                </a>
+              </li>
+              <li>
+                <a href="service.html">
+                  Services
+                </a>
+              </li>
+              <li>
+                <a href="project-listing.html">
+                  Projects
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="forum.html">Forum</a> <!-- Changed from 'Community' -->
+              </li>              
+              <li>
+                <a href="FAQ.html">
+                  FAQ
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="info_form ">
+            <h5>
+              Newsletter
+            </h5>
+            <form action="">
+              <input type="email" placeholder="Enter your email">
+              <button>
+                Subscribe
+              </button>
+            </form>
+            <div class="social_box">
+              <a href="">
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-youtube" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end info_section -->
+
+  <!-- Footer Section with Consistent Style -->
+  <footer class="footer_section">
+    <div class="container">
+      <p>
+        &copy; <span id="displayYear"></span> All Rights Reserved By
+        <a href="https://html.design/">ServiceSavvy</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- JavaScript Files -->
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script src="js/custom.js"></script>
+</body>
+</html>

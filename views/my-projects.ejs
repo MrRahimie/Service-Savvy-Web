@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <link rel="icon" href="images/fevicon.png" type="image/gif" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>ServiceSavvy</title>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      $('#projectForm').on('submit', function (event) {
+        event.preventDefault(); // Prevent the form from submitting the traditional way
+
+        // Collect form data
+        const formData = {
+          name: $('input[name="name"]').val(),
+          overview: $('textarea[name="overview"]').val(),
+          requirements: $('textarea[name="requirements"]').val(),
+          budget: $('input[name="budget"]').val(),
+          email: $('input[name="email"]').val(),
+          phone: $('input[name="phone"]').val(),
+          completionDate: $('input[name="completionDate"]').val()
+        };
+
+        // Send the data via AJAX
+        $.ajax({
+          type: 'POST',
+          url: '/submit-project',
+          data: JSON.stringify(formData),
+          contentType: 'application/json',
+          success: function (response) {
+            alert('Project data submitted successfully!');
+            // Optionally, clear the form fields
+            $('#projectForm')[0].reset();
+          },
+          error: function (error) {
+            alert('Error submitting project data: ' + error.responseText);
+          }
+        });
+      });
+    });
+
+    function editProject(projectId) {
+          // Go to project edit page
+          window.location.href = `/project-edit?id=${projectId}`;
+        }
+
+        async function deleteProject(projectId) {
+            if (confirm('Are you sure you want to delete this project?')) {
+                try {
+                    const response = await fetch(`/projects/${projectId}`, {
+                        method: 'DELETE',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    });
+                    const data = await response.json();
+                    if (response.ok) {
+                        alert(data.message);
+                        // Optionally, remove the project from the DOM
+                        location.reload(); // Simple way to refresh the page and reflect changes
+                    } else {
+                        alert(data.message);
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                    alert('An error occurred while deleting the project.');
+                }
+            }
+        }
+  </script>
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+  <!-- bootstrap js -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+  <!-- range slider -->
+
+  <!-- font awesome style -->
+  <link href="css/font-awesome.min.css" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet" />
+  <!--icons kit from font-awesome-->
+  <script src="https://kit.fontawesome.com/2b851abc27.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+  <div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="header_top">
+        <div class="container-fluid">
+          <div class="top_nav_container">
+            <div class="contact_nav">
+              <a href="">
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                <span>
+                  Call : +01 123455678990
+                </span>
+              </a>
+              <a href="">
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+                <span>
+                  Email : serviceSavvy@gmail.com
+                </span>
+              </a>
+            </div>
+            <div class="user_option_box">
+              <a href="/">LOGOUT</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="header_bottom">
+        <div class="container-fluid">
+          <nav class="navbar navbar-expand-lg custom_nav-container ">
+            <a class="navbar-brand" href="index.html">
+              <span>
+                ServiceSavvy
+              </span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class=""> </span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ">
+                <li class="nav-item">
+                  <a class="nav-link" href="/home">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/service">Services</a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="/project-listing">Projects <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/forum">Forum</a> <!-- Changed from 'Community' -->
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/FAQ">FAQ</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/profile_with_data_and_skills">Manage Account</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <!-- end header section -->
+
+    <div class="container layout_padding">
+      <h2>My Projects</h2>
+    </div>
+    <section>
+      <div class="container">
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#staticBackdrop4"
+          style="margin-bottom: 2%;">
+          + Add new project
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="staticBackdrop4" tabindex="-1" aria-labelledby="exampleModalLabel4"
+          aria-hidden="true">
+          <div class="modal-dialog d-flex justify-content-center">
+            <div class="modal-content w-75">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel4">What is your project about?</h5>
+                <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn-close"
+                  data-mdb-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body p-4">
+                <form id="projectForm" method="POST" action="/submit-project">
+                  <!-- Project name input -->
+                  <div data-mdb-input-init class="form-outline mb-4">
+                    <input type="text" name="name" id="name" class="form-control" required />
+                    <label class="form-label" for="name">Name</label>
+                  </div>
+
+                  <!-- Brief overview input -->
+                  <div data-mdb-input-init class="form-outline mb-4">
+                    <textarea name="overview" id="overview" class="form-control" required></textarea>
+                    <label class="form-label" for="overview">Overview</label>
+                  </div>
+
+                  <!-- Requirement input -->
+                  <div data-mdb-input-init class="form-outline mb-4">
+                    <textarea name="requirements" id="requirements" class="form-control" required></textarea>
+                    <label class="form-label" for="requirements">Requirements</label>
+                  </div>
+
+                  <!-- Project budget input -->
+                  <div data-mdb-input-init class="form-outline mb-4">
+                    <input type="number" name="budget" id="budget" class="form-control" required />
+                    <label class="form-label" for="budget">Planned budget</label>
+                  </div>
+
+                  <!-- email input -->
+                  <!--<div data-mdb-input-init class="form-outline mb-4">
+                    <input type="email" name="email" id="email" required/>
+                    <label class="form-label" for="email">Email</label>
+                  </div>-->
+
+                  <!-- Phone no input -->
+                  <div data-mdb-input-init class="form-outline mb-4">
+                    <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{7}">
+                    <label for="phone">Phone</label>
+                  </div>
+
+                  <!-- Timeline input -->
+                  <div data-mdb-input-init class="form-outline mb-4">
+                    <input type="date" id="completionDate" name="completionDate" required>
+                    <label for="completionDate">Expected completion date</label>
+                  </div>
+
+                  <!-- Submit button -->
+                  <button type="submit" data-mdb-button-init data-mdb-ripple-init
+                    class="btn btn-primary btn-block">Post</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Modal -->
+      </div>
+
+      <div class="container" id="project-list">
+        <% if (projects.length> 0) { %>
+          <% projects.forEach(project=> { %>
+            <div class="project-card">
+              <h2>
+                <%= project.name%>
+              </h2>
+              <p>
+                <%= project.overview %>
+              </p>
+              <p>
+                Contractor name:
+                <%= project.contractor %>
+              </p>
+              <button class="btn btn-outline-primary" style="margin-right: 15px;"
+                onclick="editProject('<%= project._id %>')">Edit</button>
+              <button class="btn btn-outline-danger" style="margin-right: 15px;"
+              onclick="deleteProject('<%= project._id %>')">Delete</button>
+            </div>
+            <hr>
+            <% }) %>
+              <% } else { %>
+                <p>No projects found.</p>
+                <% } %>
+      </div>
+      <!--<div class="container">
+        <div class="row justify-content-start">
+          <div class="container border border-secondary-subtle rounded">
+            <div style="margin-top: 10px; margin-bottom: 10px;">
+              <div class="icon-title" style="display: flex;">
+                <i class="fa-solid fa-diagram-project" style="color: #f3c93e; margin-right: 8px;"></i>
+                <h6>This is project's title</h6>
+              </div>
+              <select class="form-select" aria-label="Default select example" style="float: right;">
+                <option selected>Status</option>
+                <option value="1">Finding</option>
+                <option value="2">Ongoing</option>
+                <option value="3" selected>Completed</option>
+              </select>
+              <img src="images/developer.jpg" alt="" height="200px" style="margin-top: 5px; margin-bottom: 5px;">
+              <h6>Contractor's name: John Doe</h6>
+            </div>
+          </div>
+        </div>
+
+        <div class="spacer" style="display: block; background-color: lightgray; padding: 5px;"></div>
+
+        <div class="row justify-content-start">
+          <div class="container border border-secondary-subtle rounded">
+            <div style="margin-top: 10px; margin-bottom: 10px;">
+              <div class="icon-title" style="display: flex;">
+                <i class="fa-solid fa-diagram-project" style="color: #f3c93e; margin-right: 8px;"></i>
+                <h6>This is project's title</h6>
+              </div>
+              <select class="form-select" aria-label="Default select example" style="float: right;">
+                <option selected>Status</option>
+                <option value="1">Finding</option>
+                <option value="2" selected>Ongoing</option>
+                <option value="3">Completed</option>
+              </select>
+              <img src="images/assgmnt.jpg" alt="" height="200px" style="margin-top: 5px; margin-bottom: 5px;">
+              <h6>Contractor's name: John Doe</h6>
+              <i class="fa-regular fa-pen-to-square fa-2xl" style="color: #f3c93e;" data-toggle="modal" data-target="#staticBackdrop4"></i>
+            </div>
+          </div>
+        </div>
+      </div>-->
+    </section>
+  </div>
+
+   <!-- info section -->
+   <section class="info_section ">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="info_contact">
+            <h5>
+              <a href="" class="navbar-brand">
+                <span>
+                  ServiceSavvy
+                </span>
+              </a>
+            </h5>
+            <p>
+              <i class="fa fa-map-marker" aria-hidden="true"></i>
+              Address
+            </p>
+            <p>
+              <i class="fa fa-phone" aria-hidden="true"></i>
+              +01 1234567890
+            </p>
+            <p>
+              <i class="fa fa-envelope" aria-hidden="true"></i>
+              serviceSavvy@gmail.com
+            </p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="info_info">
+            <h5>
+              Information
+            </h5>
+            <p>
+              ServiceSavvy is an intuitive online marketplace designed to connect freelancers with clients looking for their expertise. Whether you’re a freelancer seeking new opportunities or a client in need of talent
+            </p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="info_links">
+            <h5>
+              Useful Link
+            </h5>
+            <ul>
+              <li>
+                <a href="home">
+                  Home
+                </a>
+              </li>
+              <li>
+                <a href="service">
+                  Services
+                </a>
+              </li>
+              <li>
+                <a href="project-listing">
+                  Projects
+                </a>
+              </li>
+            </li>
+            <li>
+              <a href="forum">
+                Forum
+              </a>
+            </li>
+              <li>
+                <a href="FAQ">
+                  FAQ
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="info_form ">
+            <h5>
+              Newsletter
+            </h5>
+            <form action="">
+              <input type="email" placeholder="Enter your email">
+              <button>
+                Subscribe
+              </button>
+            </form>
+            <div class="social_box">
+              <a href="">
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-youtube" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end info_section -->
+
+
+  <!-- footer section -->
+  <footer class="footer_section">
+    <div class="container">
+      <p>
+        &copy; <span id="displayYear"></span> All Rights Reserved By
+        <a href="https://html.design/">ServiceSavvy</a>
+      </p>
+    </div>
+  </footer>
+  <!-- footer section -->
+
+  <!-- jQery -->
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <!-- bootstrap js -->
+  <script src="js/bootstrap.js"></script>
+  <!-- custom js -->
+  <script src="js/custom.js"></script>
+
+
+</body>
+
+</html>

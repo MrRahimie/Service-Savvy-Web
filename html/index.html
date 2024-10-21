@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicesavvy</title>
+    <link rel="stylesheet" href="/css/login.css">
+</head>
+<body>
+    <header>
+        <div class="logo-title-container">
+            <img class="logo" src="images/SS logo.png" width="80" alt="Logo">
+            <p class="title">ServiceSavvy</p>
+        </div>
+        <nav class="navigation">
+
+            <a href="/index.html">Home</a>
+            <a href="/aboutIndex.html">About</a>
+            <a href="/support.html">Support and Help</a>
+            <button class="btnLogin-popup">Login</button>
+        </nav>
+    </header>
+    <div class="wrapper">
+        <div class="form-box login"></div>
+        <div class="container" id="container">
+            <div class="form-container sign-up-container">
+                <form action="/index" method="post">
+                    <h1>Create Account</h1>
+                    <div class="social-container">
+                        <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                        <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <span>or use your email for registration</span>
+                    <input type="email" placeholder="Email" />
+                    <input type="text" placeholder="Name" />
+                    <input type="password" placeholder="Password" />
+                    <!-- <button onclick="window.location.href='/home.html'">Sign In</button> -->
+                    <input type="submit" >
+
+                </form>
+            </div>
+            <div class="form-container sign-in-container">
+                <form action="/login" method="post">
+                    <h1>Sign in</h1>
+                    <div class="social-container">
+                        <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                        <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <span>or use your account</span>
+                    <input type="email" placeholder="Email" />
+                    <input type="password" placeholder="Password" />
+                    <a href="/forgot_password.html">Forgot your password?</a>
+                    <input type="submit">
+                </form>
+            </div>
+            <div class="overlay-container">
+                <div class="overlay">
+                    <div class="overlay-panel overlay-left">
+                        <h1>Welcome Back!</h1>
+                        <p>To keep connected with us please login with your personal info</p>
+                        <button class="ghost" id="signIn">Sign In</button>
+                    </div>
+                    <div class="overlay-panel overlay-right">
+                        <h1>Hello, Friend!</h1>
+                        <p>Enter your personal details and start journey with us</p>
+                        <button class="ghost" id="signUp">Sign Up</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="span-wrapper">
+        <div>
+            <p class="line1">
+                WHERE TALENT MEETS OPPORTUNITY !
+            </p>
+        </div>
+        <div class="service-info">
+            <h3>Services that are frequently offered:</h3>
+            <ul class="service-list">
+                <li class="service-item">
+                    <img class="lisvg" src="images/programming.svg" alt="programming" loading="lazy">
+                    <h3>Programming</h3>
+                </li>
+                <li class="service-item">
+                    <img class="lisvg" src="Images/photography.svg" alt="programming" loading="lazy">
+                    <h3>Photography</h3>
+                </li>
+                <li class="service-item">
+                    <img class="lisvg" src="Images/Graphic_Design.svg" alt="programming" loading="lazy">
+                    <h3>Graphics Design</h3>
+                </li>
+                <li class="service-item">
+                    <img class="lisvg" src="Images/Digital_Marketing.svg" alt="programming" loading="lazy">
+                    <h3>Digital Marketing</h3>
+                </li>
+                <li class="service-item">
+                    <img class="lisvg" src="Images/image 1.svg" alt="many more" loading="lazy">
+                    <h3>and many more</h3>
+                </li>
+            </ul>
+        </div>
+        <div class="service-info2">
+            <p class="lineBold">Take the first step towards success and sign up now.</p>
+            <p class="line2">Your dream team of freelancers is just a click away!</p>
+            <button class="btnLogin-popup2">JOIN !</button>
+            
+        </div>
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+.stars {
+  font-size: 23px;
+  color: rgb(243, 243, 43);
+  margin: 0;
+}
+
+.overall-stars {
+  display: inline-block;
+  font-size: 40px;
+  font-style: normal;
+  color: rgb(255, 162, 0);
+}
+
+.rating-number {
+  display: inline-block;
+  margin-top: 30px;
+  margin-bottom: 0px;
+  font-size: 21px;
+  margin-right: 10px;
+  font-style: normal;
+  color: black;
+}
+
+.overall-rating {
+  margin-left: 4px;
+}
+
+.date {
+  font-size: 10px;
+  margin: bottom 2px;
+  color: rgba(111, 111, 121, 0.986);
+  text-align: left;
+}
+
+h5 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.comment {
+  font-size: 13px;
+  text-align: left;
+}
+
+.btn {
+  color: white;
+  border: none;
+}
+
+.review-txt {
+  font-size: 45px;
+  margin-left: 4px;
+  margin-bottom: 15px;
+}
